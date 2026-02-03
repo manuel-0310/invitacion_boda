@@ -1,11 +1,175 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Invitación Alberto & Yissel</title>
+    <link rel="stylesheet" href="stylesmain.css">
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;500&family=Great+Vibes&display=swap" rel="stylesheet">
 </head>
 <body>
+
+    <header class="hero">
+        <div class="hero-content">
+            <h1>Alberto & Yissel</h1>
+        </div>
+    </header>
+
+    <div class="divider"><img src="src/separador.png" alt="decoración"></div>
+
+    <section class="countdown-section">
+        <h2>CUENTA REGRESIVA</h2>
+        <p class="subtitle">para el día más especial de nuestras vidas</p>
+        
+        <div id="timer">
+            <div class="time-box">
+                <span id="days">00</span>
+                <label>DÍAS</label>
+            </div>
+            <div class="time-box">
+                <span id="hours">00</span>
+                <label>HORAS</label>
+            </div>
+            <div class="time-box">
+                <span id="minutes">00</span>
+                <label>MINUTOS</label>
+            </div>
+            <div class="time-box">
+                <span id="seconds">00</span>
+                <label>SEGUNDOS</label>
+            </div>
+        </div>
+        <p class="wedding-date">23 de Mayo, 2026</p>
+    </section>
+
+    <div class="divider"><img src="src/separador.png" alt="decoración"></div>
+
+    <section class="story-section">
+        <h2>NUESTRA HISTORIA</h2>
+        <div class="story-text">
+            <p><b>Falta el contenido de acá</b></p>
+        </div>
+    </section>
+
+    <div class="divider"><img src="src/separador.png" alt="decoración"></div>
+
+    <section class="gallery-section">
+        <h2>NUESTRO COMPROMISO</h2>
+        <div class="masonry-gallery">
+            <div class="photo"><img src="foto1.jpg" alt="Compromiso"></div>
+            <div class="photo"><img src="foto2.jpg" alt="Compromiso"></div>
+            <div class="photo"><img src="foto3.jpg" alt="Compromiso"></div>
+            <div class="photo"><img src="foto4.jpg" alt="Compromiso"></div>
+            <div class="photo"><img src="foto5.jpg" alt="Compromiso"></div>
+        </div>
+    </section>
+    <section class="timeline-section">
+        <h2>NUESTRO GRAN DÍA</h2>
+        <div class="timeline-container">
+            <div class="timeline-event">
+                <div class="event-icon">
+                    <img src="inicio.png" alt="Icono Inicio">
+                </div>
+                <div class="event-content">
+                    <h3>3:30 PM - INICIO DEL EVENTO</h3>
+                    <p>Se abren puertas, se acomodan corazones y empieza la cuenta regresiva del amor.</p>
+                </div>
+            </div>
     
+            <div class="timeline-event">
+                <div class="event-icon">
+                    <img src="anillos.png" alt="Icono Ceremonia">
+                </div>
+                <div class="event-content">
+                    <h3>4:00 PM - CEREMONIA</h3>
+                    <p>Lágrimas bonitas, miradas eternas y un "sí" que lo cambia todo.</p>
+                </div>
+            </div>
+    
+            <div class="timeline-event">
+                <div class="event-icon">
+                    <img src="copas.png" alt="Icono Cóctel">
+                </div>
+                <div class="event-content">
+                    <h3>5:00 PM - BIENVENIDA Y CÓCTEL</h3>
+                    <p>Saludos, chismecito y brindis de calentamiento.</p>
+                </div>
+            </div>
+    
+            <div class="timeline-event">
+                <div class="event-icon">
+                    <img src="baile.png" alt="Icono Entrada">
+                </div>
+                <div class="event-content">
+                    <h3>6:30 PM - ENTRADA DE LOS NOVIOS</h3>
+                    <p>El primer baile con sello de película marca el inicio de la fiesta.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <div class="divider"><img src="src/separador.png" alt="decoración"></div>
+    <section class="location-section">
+        <h2>UBICACIÓN</h2>
+        <p class="location-name">Santa Mónica, Antioquia</p>
+        <div class="location-image">
+            <img src="hacienda_foto.jpg" alt="Hacienda Santa Mónica" class="hacienda-img">
+        </div>
+        <div class="map-container">
+            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3966.521260322283!2d-75.4542!3d6.194!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8e469f649859f7d3%3A0x67a3f3a8f4c28f9c!2sSANTAMONICA%20PREMIUM%20LLANOGRANDE!5e0!3m2!1ses!2sco!4v1700000000000!5m2!1ses!2sco" width="100%" height="400" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+        </div>
+    </section>
+    <div class="divider"><img src="src/separador.png" alt="decoración"></div>
+
+    <section class="rsvp-section">
+        <h2 class="section-title">CONFIRMA TU ASISTENCIA</h2>
+        <p class="section-subtitle">¡Esperamos contar contigo!</p>
+    
+        <div class="rsvp-container">
+            <form id="rsvp-form" class="styled-form">
+                <div class="input-row">
+                    <div class="form-group">
+                        <label for="from_name">Nombres *</label>
+                        <input type="text" name="from_name" id="from_name" required placeholder="Tu respuesta">
+                    </div>
+                    <div class="form-group">
+                        <label for="last_name">Apellidos *</label>
+                        <input type="text" name="last_name" id="last_name" required placeholder="Tu respuesta">
+                    </div>
+                </div>
+    
+                <div class="form-group">
+                    <label for="age">Edad *</label>
+                    <input type="number" name="age" id="age" required placeholder="Tu respuesta">
+                </div>
+    
+                <div class="form-group">
+                    <label for="allergies">Alergias Alimentarias</label>
+                    <textarea name="allergies" id="allergies" rows="3" placeholder="Si no tienes, escribe 'Ninguna'"></textarea>
+                </div>
+    
+                <div class="form-group">
+                    <label class="main-label">¿Vas a asistir? *</label>
+                    <div class="radio-options">
+                        <label class="radio-container">
+                            <input type="radio" name="attendance" value="Sí" required>
+                            <span class="checkmark"></span>
+                            Sí, ¡allí estaré!
+                        </label>
+                        <label class="radio-container">
+                            <input type="radio" name="attendance" value="No">
+                            <span class="checkmark"></span>
+                            No, me es imposible
+                        </label>
+                    </div>
+                </div>
+    
+                <button type="submit" id="button-send" class="btn-primary">ENVIAR CONFIRMACIÓN</button>
+            </form>
+        </div>
+    </section>
+<script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
+
+    <script src="scriptmain.js"></script>
 </body>
 </html>

@@ -1,0 +1,342 @@
+:root {
+    --text-color: #6b6b6b;
+    --title-color: #4a4a4a;
+    --bg-light: #fdfdfd;
+}
+
+body {
+    position: relative;
+    margin: 0;
+    padding: 0;
+}
+
+body::before {
+    content: "";
+    position: fixed;
+    inset: 0;
+
+    background-image: url('src/papel.webp');
+    background-size: 150% auto;
+    background-position: center top;
+    background-repeat: repeat-y;
+
+    opacity: 0.1; /* ← aquí cambias la opacidad */
+    z-index: -1;
+}
+
+
+
+body {
+    margin: 0;
+    font-family: 'Cormorant Garamond', serif;
+    color: var(--text-color);
+    background-color: var(--bg-light);
+    text-align: center;
+}
+
+/* PORTADA */
+.hero {
+    height: 100vh;
+    background: url('fondo.jpg') no-repeat center center/cover;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.hero h1 {
+    font-family: 'Great Vibes', cursive;
+    font-size: 5rem;
+    color: #2c3e50;
+    text-shadow: 2px 2px 4px rgba(255,255,255,0.8);
+}
+
+/* SEPARADOR */
+.divider {
+    padding: 40px 0;
+}
+
+.divider img {
+    width: 400px;
+    opacity: 0.8;
+}
+
+/* CUENTA REGRESIVA */
+h2 {
+    letter-spacing: 4px;
+    font-weight: 300;
+    color: var(--title-color);
+    font-size: 2rem;
+}
+
+.subtitle { font-style: italic; margin-bottom: 30px; }
+
+#timer {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    flex-wrap: wrap;
+}
+
+.time-box {
+    background: white;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+    min-width: 80px;
+}
+
+.time-box span {
+    display: block;
+    font-size: 2.5rem;
+    color: var(--title-color);
+}
+
+.time-box label {
+    font-size: 0.7rem;
+    letter-spacing: 2px;
+}
+
+/* HISTORIA */
+.story-text {
+    max-width: 700px;
+    margin: 0 auto;
+    line-height: 1.8;
+    font-size: 1.2rem;
+    padding: 0 20px;
+}
+
+/* GALERÍA RESPONSIVA */
+.masonry-gallery {
+    column-count: 3;
+    column-gap: 15px;
+    padding: 20px;
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+.photo img {
+    width: 100%;
+    border-radius: 15px;
+    margin-bottom: 15px;
+}
+
+/* RESPONSIVO PARA CELULARES */
+@media (max-width: 768px) {
+    .hero h1 { font-size: 3rem; }
+    .masonry-gallery { column-count: 2; }
+    .time-box { min-width: 60px; padding: 10px; }
+}
+
+/* CONTENEDOR PRINCIPAL DE LA LÍNEA */
+.timeline-container {
+    position: relative;
+    max-width: 800px;
+    margin: 50px auto;
+    padding: 20px;
+}
+
+/* LA LÍNEA VERTICAL */
+.timeline-container::after {
+    content: '';
+    position: absolute;
+    width: 3px;
+    background-color: #5d6d7e; /* Color gris azulado de tu imagen */
+    top: 0;
+    bottom: 0;
+    left: 40px; /* Alineado a la izquierda para móviles y diseño */
+    margin-left: -1.5px;
+}
+
+/* CADA EVENTO */
+.timeline-event {
+    padding: 10px 40px;
+    position: relative;
+    background-color: inherit;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    margin-bottom: 30px;
+    text-align: left;
+}
+
+/* EL PUNTO SOBRE LA LÍNEA */
+.timeline-event::before {
+    content: '';
+    position: absolute;
+    width: 16px;
+    height: 16px;
+    left: 32px;
+    background-color: #5d6d7e;
+    border: 2px solid white;
+    top: 50%;
+    transform: translateY(-50%);
+    border-radius: 50%;
+    z-index: 1;
+}
+
+/* ICONOS A LA IZQUIERDA */
+.event-icon {
+    width: 80px;
+    margin-right: 30px;
+    padding-left: 60px; /* Espacio para no tapar la línea */
+}
+
+.event-icon img {
+    width: 60px;
+    height: auto;
+}
+
+/* TEXTO DE LOS EVENTOS */
+.event-content h3 {
+    margin: 0;
+    font-size: 1.1rem;
+    color: #4a4a4a;
+    font-weight: 500;
+}
+
+.event-content p {
+    margin: 5px 0 0;
+    font-size: 0.95rem;
+    color: #7f8c8d;
+}
+
+/* ESTILOS DE UBICACIÓN */
+.location-name {
+    font-size: 1.5rem;
+    margin-bottom: 20px;
+}
+
+.hacienda-img {
+    width: 90%;
+    max-width: 800px;
+    border-radius: 5px;
+    margin-bottom: 20px;
+}
+
+/* AJUSTE RESPONSIVO */
+@media (max-width: 600px) {
+    .event-icon {
+        display: none; /* En celular muy pequeño ocultamos iconos para dar espacio al texto */
+    }
+    .timeline-container::after {
+        left: 20px;
+    }
+    .timeline-event::before {
+        left: 12px;
+    }
+    .event-content {
+        padding-left: 20px;
+    }
+}
+
+/* AJUSTES GLOBALES DE TEXTO */
+body {
+    font-size: 18px; /* Base más grande */
+}
+
+h2.section-title {
+    font-size: 2.5rem; /* Título imponente */
+    letter-spacing: 5px;
+    margin-bottom: 10px;
+    color: #4a4a4a;
+}
+
+.section-subtitle {
+    font-size: 1.4rem;
+    font-style: italic;
+    margin-bottom: 40px;
+}
+
+/* CONTENEDOR RSVP */
+.rsvp-section {
+    padding: 80px 20px;
+}
+
+.rsvp-container {
+    max-width: 650px;
+    margin: 0 auto;
+    background: #ffffff;
+    padding: 50px;
+    border-radius: 20px;
+    box-shadow: 0 15px 40px rgba(0,0,0,0.08);
+}
+
+/* ESTILO DE FORMULARIO */
+.form-group {
+    margin-bottom: 30px;
+    text-align: left;
+}
+
+.form-group label {
+    display: block;
+    font-size: 1.1rem;
+    font-weight: 600;
+    margin-bottom: 12px;
+    color: #333;
+}
+
+.form-group input, 
+.form-group textarea {
+    width: 100%;
+    padding: 15px;
+    font-size: 1.1rem; /* Texto que el usuario escribe */
+    border: 1.5px solid #eaeaea;
+    border-radius: 10px;
+    background-color: #fafafa;
+    transition: all 0.3s ease;
+}
+
+.form-group input:focus {
+    border-color: #5d6d7e;
+    outline: none;
+    background-color: #fff;
+}
+
+/* RADIOS PERSONALIZADOS */
+.radio-options {
+    margin-top: 15px;
+}
+
+.radio-container {
+    display: block;
+    position: relative;
+    padding-left: 35px;
+    margin-bottom: 15px;
+    cursor: pointer;
+    font-size: 1.2rem;
+    user-select: none;
+}
+
+/* BOTÓN PREMIUM */
+.btn-primary {
+    width: 100%;
+    padding: 20px;
+    background-color: #5d6d7e; /* Gris elegante de tu paleta */
+    color: white;
+    border: none;
+    border-radius: 50px;
+    font-size: 1.2rem;
+    font-weight: 500;
+    letter-spacing: 3px;
+    cursor: pointer;
+    transition: transform 0.2s, background 0.3s;
+    margin-top: 20px;
+}
+
+.btn-primary:hover {
+    background-color: #4a5966;
+    transform: translateY(-2px);
+}
+
+/* RESPONSIVO */
+@media (max-width: 768px) {
+    .rsvp-container {
+        padding: 30px 20px;
+    }
+    h2.section-title {
+        font-size: 1.8rem;
+    }
+    .form-group label {
+        font-size: 1rem;
+    }
+}

@@ -1,11 +1,64 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Invitación Especial</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;600&family=Montserrat:wght@300;400&display=swap" rel="stylesheet">
 </head>
 <body>
-    
+    <div class="container">
+        <div class="invitation-wrapper">
+            <!-- Carta que sale del sobre -->
+            <div class="letter" id="letter">
+                <div class="letter-content">
+                    <div class="decorative-line"></div>
+                    <h1 class="invitation-text">¡Eres un invitado especial!</h1>
+                    <div class="decorative-line"></div>
+                </div>
+            </div>
+
+            <!-- Sobre cerrado -->
+            <div class="envelope" id="envelope">
+                <!-- Parte trasera del sobre -->
+                <div class="envelope-back">
+                    <div class="envelope-shadow"></div>
+                </div>
+                
+                <!-- Cuerpo del sobre -->
+                <div class="envelope-body"></div>
+                
+                <!-- Solapa superior que se abre -->
+                <div class="envelope-flap-wrapper">
+                    <div class="envelope-flap"></div>
+                </div>
+                
+                <!-- Sello de cera -->
+                <div class="wax-seal">
+                    <div class="wax-texture"></div>
+                    <span class="initials">A&J</span>
+                </div>
+            </div>
+
+            <!-- Botón continuar -->
+            <button class="continue-btn" id="continueBtn" onclick="window.location.href='main.html'">
+                Continuar
+            </button>
+        </div>
+
+        <!-- Elementos decorativos -->
+        <div class="floating-elements">
+            <div class="flower flower-1">✿</div>
+            <div class="flower flower-2">✿</div>
+            <div class="flower flower-3">✿</div>
+            <div class="flower flower-4">✿</div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
 </body>
 </html>
