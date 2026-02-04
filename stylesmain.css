@@ -135,17 +135,6 @@ h2 {
     padding: 20px;
 }
 
-/* LA LÍNEA VERTICAL */
-.timeline-container::after {
-    content: '';
-    position: absolute;
-    width: 3px;
-    background-color: #5d6d7e; /* Color gris azulado de tu imagen */
-    top: 0;
-    bottom: 0;
-    left: 40px; /* Alineado a la izquierda para móviles y diseño */
-    margin-left: -1.5px;
-}
 
 /* CADA EVENTO */
 .timeline-event {
@@ -159,30 +148,16 @@ h2 {
     text-align: left;
 }
 
-/* EL PUNTO SOBRE LA LÍNEA */
-.timeline-event::before {
-    content: '';
-    position: absolute;
-    width: 16px;
-    height: 16px;
-    left: 32px;
-    background-color: #5d6d7e;
-    border: 2px solid white;
-    top: 50%;
-    transform: translateY(-50%);
-    border-radius: 50%;
-    z-index: 1;
-}
 
 /* ICONOS A LA IZQUIERDA */
 .event-icon {
-    width: 80px;
+    width: 100px;
     margin-right: 30px;
     padding-left: 60px; /* Espacio para no tapar la línea */
 }
 
 .event-icon img {
-    width: 60px;
+    width: 130px;
     height: auto;
 }
 
@@ -203,14 +178,14 @@ h2 {
 /* ESTILOS DE UBICACIÓN */
 .location-name {
     font-size: 1.5rem;
-    margin-bottom: 20px;
+    margin-bottom: -110px;
 }
 
 .hacienda-img {
-    width: 90%;
-    max-width: 800px;
+    width: 50%;
+    max-width: 600px;
     border-radius: 5px;
-    margin-bottom: 20px;
+    margin-bottom: -80px;
 }
 
 /* AJUSTE RESPONSIVO */
@@ -249,7 +224,7 @@ h2.section-title {
 
 /* CONTENEDOR RSVP */
 .rsvp-section {
-    padding: 80px 20px;
+    padding-bottom: 100px;
 }
 
 .rsvp-container {
@@ -347,6 +322,13 @@ h2.section-title {
     padding: 20px;
 }
 
+.dresscode-image{
+    width: 80%;
+    margin-bottom: 10px;
+    display: block;
+    margin: 0 auto;
+    max-width: 600px;
+}
 .dresscode-intro {
     font-size: 1.3rem;
     margin-bottom: 30px;
