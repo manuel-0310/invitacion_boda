@@ -29,11 +29,11 @@ body::before {
     inset: 0;
 
     background-image: url('src/papel.webp');
-    background-size: 150% auto;
+    background-size: 60% auto; /* Más zoom para ver mejor la textura */
     background-position: center top;
     background-repeat: repeat-y;
 
-    opacity: 0.1; /* ← aquí cambias la opacidad */
+    opacity: 0.25; /* Más visible la textura de papel */
     z-index: -1;
 }
 
@@ -93,10 +93,12 @@ h2 {
 .subtitle { font-style: italic; margin-bottom: 30px; }
 
 #timer {
-    display: flex;
-    justify-content: center;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
     gap: 15px;
-    flex-wrap: wrap;
+    justify-content: center;
+    max-width: 400px;
+    margin: 0 auto;
 }
 
 .time-box {
@@ -104,7 +106,9 @@ h2 {
     padding: 20px;
     border-radius: 10px;
     box-shadow: 0 4px 15px rgba(0,0,0,0.05);
-    min-width: 80px;
+    width: 100%;
+    min-width: 0;
+    text-align: center;
 }
 
 .time-box span {
@@ -136,17 +140,10 @@ h2 {
     margin: 0 auto;
 }
 
-.photo {
-    break-inside: avoid;
-    margin-bottom: 15px;
-}
-
 .photo img {
     width: 100%;
-    max-width: 100%;
-    height: auto;
     border-radius: 15px;
-    display: block;
+    margin-bottom: 15px;
 }
 
 /* Imágenes en general no deben desbordar */
@@ -185,12 +182,9 @@ img {
 /* RESPONSIVO PARA CELULARES */
 @media (max-width: 768px) {
     .hero h1 { font-size: 2.5rem; }
-    .masonry-gallery {
-        column-count: 2;
-        padding: 15px 0;
-        max-width: 100%;
-    }
-    .time-box { min-width: 60px; padding: 10px; }
+    .masonry-gallery { column-count: 2; }
+    #timer { max-width: 280px; }
+    .time-box { padding: 10px; }
     .divider img { width: 100%; max-width: 280px; }
 }
 
@@ -231,14 +225,14 @@ img {
 /* TEXTO DE LOS EVENTOS */
 .event-content h3 {
     margin: 0;
-    font-size: 1.1rem;
+    font-size: 1.35rem;
     color: #4a4a4a;
     font-weight: 500;
 }
 
 .event-content p {
     margin: 5px 0 0;
-    font-size: 0.95rem;
+    font-size: 1.1rem;
     color: #7f8c8d;
 }
 
@@ -336,10 +330,10 @@ img {
         min-width: 0;
     }
     .event-content h3 {
-        font-size: 0.95rem;
+        font-size: 1.15rem;
     }
     .event-content p {
-        font-size: 0.85rem;
+        font-size: 1rem;
     }
     .map-container iframe { height: 220px !important; }
     .input-row {
@@ -434,15 +428,14 @@ h2.section-title {
 
 /* BOTÓN PREMIUM */
 .btn-primary {
-    width: 100%;
-    padding: 20px;
+    padding: 12px 32px;
     background-color: #5d6d7e; /* Gris elegante de tu paleta */
     color: white;
     border: none;
     border-radius: 50px;
-    font-size: 1.2rem;
+    font-size: 1rem;
     font-weight: 500;
-    letter-spacing: 3px;
+    letter-spacing: 2px;
     cursor: pointer;
     transition: transform 0.2s, background 0.3s;
     margin-top: 20px;
@@ -479,15 +472,11 @@ h2.section-title {
 }
 
 @media (max-width: 480px) {
-    .masonry-gallery {
-        column-count: 1;
-        padding: 10px 0;
-    }
     .hero h1 {
         font-size: 2rem;
     }
+    #timer { max-width: 240px; }
     .time-box {
-        min-width: 55px;
         padding: 8px;
     }
     .time-box span {
