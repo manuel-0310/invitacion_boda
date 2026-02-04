@@ -40,8 +40,8 @@ body::before {
 /* Textura de papel más visible en celular */
 @media (max-width: 768px) {
     body::before {
-        background-size: 70% auto;
-        opacity: 0.2;
+        background-size: 450% auto;
+        opacity: 0.1;
     }
 }
 
