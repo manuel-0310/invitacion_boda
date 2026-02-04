@@ -12,7 +12,7 @@ body {
 
 body::before {
     content: "";
-    position: fixed;
+    position: absolute;
     inset: 0;
 
     background-image: url('src/papel.webp');
@@ -339,4 +339,108 @@ h2.section-title {
     .form-group label {
         font-size: 1rem;
     }
+}
+/* SECCIÓN VESTIMENTA */
+.dresscode-container {
+    max-width: 700px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+.dresscode-intro {
+    font-size: 1.3rem;
+    margin-bottom: 30px;
+    font-style: italic;
+}
+
+.dresscode-details {
+    display: flex;
+    justify-content: space-around;
+    margin-bottom: 20px;
+    gap: 20px;
+}
+
+.gender-dress strong {
+    display: block;
+    letter-spacing: 2px;
+    color: #5d6d7e;
+    margin-bottom: 10px;
+}
+
+.color-reserve {
+    font-weight: bold;
+    color: #a94442; /* Un tono rojizo suave para resaltar la nota del blanco */
+    margin-bottom: 30px;
+}
+
+.btn-pinterest {
+    display: inline-block;
+    padding: 12px 25px;
+    border: 1px solid #5d6d7e;
+    color: #5d6d7e;
+    text-decoration: none;
+    border-radius: 5px;
+    font-size: 0.9rem;
+    transition: 0.3s;
+}
+
+.btn-pinterest:hover {
+    background: #5d6d7e;
+    color: white;
+}
+
+/* SECCIÓN MISA */
+.script-font {
+    font-family: 'Great Vibes', cursive;
+    font-size: 3rem !important;
+}
+
+.mass-grid {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 50px;
+    max-width: 900px;
+    margin: 40px auto;
+    flex-wrap: wrap;
+}
+
+.mass-text-box {
+    flex: 1;
+    min-width: 300px;
+    text-align: left;
+    line-height: 1.8;
+}
+
+.mass-warning-box {
+    flex: 1;
+    min-width: 300px;
+    background: rgba(212, 172, 13, 0.05); /* Dorado muy suave */
+    padding: 30px;
+    border-radius: 10px;
+    border: 1px solid #d4ac0d;
+}
+
+.warning-tag {
+    background: #d4ac0d;
+    color: white;
+    padding: 5px 15px;
+    border-radius: 20px;
+    font-size: 0.8rem;
+    letter-spacing: 2px;
+}
+
+.warning-img img {
+    width: 150px;
+    height: 150px;
+    object-fit: cover;
+    border-radius: 50%;
+    margin: 20px 0;
+    border: 3px solid #fff;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+}
+
+@media (max-width: 768px) {
+    .mass-grid { flex-direction: column; }
+    .mass-text-box { text-align: center; }
 }
