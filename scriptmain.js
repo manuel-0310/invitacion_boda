@@ -1,5 +1,5 @@
 // Configura la fecha de la boda aquí
-const weddingDate = new Date("May 23, 2026 14:30:00").getTime();
+const weddingDate = new Date("May 23, 2026 15:00:00").getTime();
 
 const timer = setInterval(function() {
     const now = new Date().getTime();
