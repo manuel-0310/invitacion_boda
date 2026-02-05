@@ -250,6 +250,16 @@ img {
     margin: 0 auto;
 }
 
+/* El collage de la hacienda está anidado en location-section:
+   evitar padding duplicado para que tenga el mismo tamaño que el primer collage en móvil */
+.location-section .gallery-section {
+    padding-left: 0;
+    padding-right: 0;
+    max-width: 1000px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
 .location-name {
     font-size: 1.5rem;
     margin-bottom: 20px;
@@ -600,9 +610,9 @@ h2.section-title {
     width: 150px;
     height: 150px;
     object-fit: cover;
-    border-radius: 50%;
+    border-radius: 10%;
     margin: 20px 0;
-    border: 3px solid #fff;
+    border: 3px solid #575757;
     box-shadow: 0 5px 15px rgba(0,0,0,0.1);
 }
 
@@ -629,5 +639,75 @@ h2.section-title {
     }
     .script-font {
         font-size: 2.2rem !important;
+    }
+}
+/* Importamos una fuente cursiva similar a la de la imagen */
+@import url('https://fonts.googleapis.com/css2?family=Great+Vibes&display=swap');
+
+.footer-boda {
+    width: 100%;
+    background-color: #e2d1c3; /* Color arena acorde a la referencia */
+    padding: 25px 0;
+    margin-top: 50px;
+    border-top: 1px solid rgba(0,0,0,0.05);
+}
+
+.footer-content {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    max-width: 900px;
+    margin: 0 auto;
+    gap: 50px; /* Espacio horizontal entre secciones */
+}
+
+.footer-section {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    flex: 1;
+}
+
+.nombre-planner {
+    font-family: 'Great Vibes', cursive;
+    font-size: 1.8rem;
+    color: #4a4a4a;
+    line-height: 1.2;
+}
+
+.rol-planner {
+    font-family: 'Arial', sans-serif;
+    font-size: 0.7rem;
+    letter-spacing: 2px;
+    color: #666;
+    text-transform: uppercase;
+    margin-top: 4px;
+}
+
+.logo-footer {
+    height: 80px; /* Tamaño del logo central */
+    width: auto;
+    filter: drop-shadow(0px 2px 2px rgba(0,0,0,0.1));
+}
+
+/* Ajuste para que se vea bien en celulares */
+@media (max-width: 600px) {
+    .footer-content {
+        gap: 20px;
+        padding: 0 10px;
+    }
+    
+    .nombre-planner {
+        font-size: 1.3rem;
+    }
+    
+    .rol-planner {
+        font-size: 0.55rem;
+        letter-spacing: 1px;
+    }
+
+    .logo-footer {
+        height: 60px;
     }
 }
