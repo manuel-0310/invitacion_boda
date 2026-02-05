@@ -251,13 +251,29 @@ img {
 }
 
 /* El collage de la hacienda está anidado en location-section:
-   evitar padding duplicado para que tenga el mismo tamaño que el primer collage en móvil */
+   evitar padding duplicado y hacerlo más ancho para que coincida con el primero */
 .location-section .gallery-section {
     padding-left: 0;
     padding-right: 0;
     max-width: 1000px;
     margin-left: auto;
     margin-right: auto;
+}
+
+.location-section .masonry-gallery {
+    margin-left: -15px;
+    margin-right: -15px;
+    width: calc(100% + 30px);
+    max-width: none;
+}
+
+@media (min-width: 769px) {
+    .location-section .masonry-gallery {
+        margin-left: auto;
+        margin-right: auto;
+        width: 100%;
+        max-width: 1000px;
+    }
 }
 
 .location-name {
@@ -398,7 +414,7 @@ h2.section-title {
     text-align: left;
 }
 
-.form-group label {
+.form-group label:not(.radio-container) {
     display: block;
     font-size: 1.1rem;
     font-weight: 600;
@@ -406,7 +422,7 @@ h2.section-title {
     color: #333;
 }
 
-.form-group input, 
+.form-group input:not([type="radio"]), 
 .form-group textarea {
     width: 100%;
     max-width: 100%;
@@ -423,25 +439,53 @@ h2.section-title {
     overflow: hidden;
 }
 
-.form-group input:focus {
+.form-group input:not([type="radio"]):focus {
     border-color: #5d6d7e;
     outline: none;
     background-color: #fff;
 }
 
-/* RADIOS PERSONALIZADOS */
+/* RADIOS PERSONALIZADOS - punto a la izquierda, texto a la derecha */
 .radio-options {
     margin-top: 15px;
 }
 
-.radio-container {
-    display: block;
+.radio-options .radio-container {
+    display: flex !important; /* Sobrescribe .form-group label { display: block } */
+    flex-wrap: nowrap;
+    align-items: center;
     position: relative;
-    padding-left: 35px;
     margin-bottom: 15px;
     cursor: pointer;
     font-size: 1.2rem;
     user-select: none;
+    gap: 12px;
+    font-weight: 400;
+}
+
+.radio-container input[type="radio"] {
+    -webkit-appearance: none;
+    appearance: none;
+    width: 22px;
+    height: 22px;
+    min-width: 22px;
+    min-height: 22px;
+    margin: 0;
+    padding: 0;
+    border: 2px solid #5d6d7e;
+    border-radius: 50%;
+    background: #fff;
+    cursor: pointer;
+    flex-shrink: 0;
+}
+
+.radio-container input[type="radio"]:checked {
+    background: #5d6d7e;
+    box-shadow: inset 0 0 0 3px #fff;
+}
+
+.radio-container .checkmark {
+    display: none; /* Usamos el input nativo estilizado para mejor accesibilidad y clic */
 }
 
 /* BOTÓN PREMIUM */
@@ -480,7 +524,7 @@ h2.section-title {
     .form-group label {
         font-size: 1rem;
     }
-    .form-group input,
+    .form-group input:not([type="radio"]),
     .form-group textarea {
         width: 100%;
         max-width: 100%;
@@ -641,24 +685,23 @@ h2.section-title {
         font-size: 2.2rem !important;
     }
 }
-/* Importamos una fuente cursiva similar a la de la imagen */
-@import url('https://fonts.googleapis.com/css2?family=Great+Vibes&display=swap');
 
 .footer-boda {
     width: 100%;
-    background-color: #e2d1c3; /* Color arena acorde a la referencia */
-    padding: 25px 0;
-    margin-top: 50px;
-    border-top: 1px solid rgba(0,0,0,0.05);
+    background-color: var(--bg-light);
+    padding: 45px 20px 35px;
+    margin-top: 0;
+    border-top: 1px solid rgba(74, 74, 74, 0.12);
 }
 
 .footer-content {
     display: flex;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
-    max-width: 900px;
+    max-width: 400px;
     margin: 0 auto;
-    gap: 50px; /* Espacio horizontal entre secciones */
+    gap: 32px;
 }
 
 .footer-section {
@@ -666,48 +709,51 @@ h2.section-title {
     flex-direction: column;
     align-items: center;
     text-align: center;
-    flex: 1;
 }
 
 .nombre-planner {
     font-family: 'Great Vibes', cursive;
-    font-size: 1.8rem;
-    color: #4a4a4a;
+    font-size: 1.75rem;
+    color: var(--title-color);
     line-height: 1.2;
 }
 
 .rol-planner {
-    font-family: 'Arial', sans-serif;
-    font-size: 0.7rem;
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 0.65rem;
     letter-spacing: 2px;
-    color: #666;
+    color: var(--text-color);
     text-transform: uppercase;
     margin-top: 4px;
 }
 
 .logo-footer {
-    height: 80px; /* Tamaño del logo central */
+    height: 70px;
     width: auto;
-    filter: drop-shadow(0px 2px 2px rgba(0,0,0,0.1));
+    filter: drop-shadow(0 1px 2px rgba(0,0,0,0.06));
 }
 
-/* Ajuste para que se vea bien en celulares */
+/* Ajuste para celulares */
 @media (max-width: 600px) {
     .footer-content {
-        gap: 20px;
-        padding: 0 10px;
+        gap: 28px;
+        padding: 0 15px;
+    }
+    
+    .footer-boda {
+        padding: 35px 15px 30px;
     }
     
     .nombre-planner {
-        font-size: 1.3rem;
+        font-size: 1.4rem;
     }
     
     .rol-planner {
-        font-size: 0.55rem;
-        letter-spacing: 1px;
+        font-size: 0.6rem;
+        letter-spacing: 1.5px;
     }
 
     .logo-footer {
-        height: 60px;
+        height: 55px;
     }
 }
