@@ -713,14 +713,14 @@ h2.section-title {
 
 .nombre-planner {
     font-family: 'Great Vibes', cursive;
-    font-size: 1.75rem;
+    font-size: 2rem;
     color: var(--title-color);
     line-height: 1.2;
 }
 
 .rol-planner {
     font-family: 'Cormorant Garamond', serif;
-    font-size: 0.65rem;
+    font-size: 1rem;
     letter-spacing: 2px;
     color: var(--text-color);
     text-transform: uppercase;
@@ -745,11 +745,11 @@ h2.section-title {
     }
     
     .nombre-planner {
-        font-size: 1.4rem;
+        font-size: 2rem;
     }
     
     .rol-planner {
-        font-size: 0.6rem;
+        font-size: 0.8rem;
         letter-spacing: 1.5px;
     }
 
