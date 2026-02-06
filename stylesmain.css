@@ -759,6 +759,11 @@ h2.section-title {
     margin-top: 4px;
 }
 
+
+.nombres{
+    max-width: 20%;
+}
+
 /* Footer móvil: logo a la izquierda, nombre + celular en columna a la derecha */
 @media (max-width: 768px) {
     .footer-boda {
@@ -798,5 +803,8 @@ h2.section-title {
     .logo-footer-name {
         margin-top: -20px;
         height: 32px;
+    }
+    .nombres{
+        max-width: 70%;
     }
 }
